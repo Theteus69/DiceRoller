@@ -1,0 +1,55 @@
+﻿ <?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiceRoller.MainPage">
+    
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Picker x:Name="DicePicker"
+                    Title="Escolha um número do dado!">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>1</x:String>
+                        <x:String>2</x:String>
+                        <x:String>3</x:String>
+                        <x:String>4</x:String>
+                        <x:String>5</x:String>
+                        <x:String>6</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button
+            x:Name="FlipButton"
+            Text="Girar o Dado" 
+            SemanticProperties.Hint="Gire o dado e cai em um dos números"
+            Clicked="FlipButtonClicked"
+            HorizontalOptions="Fill" />
+
+            <Label
+                x:Name="vitorias"
+                Text="Total de vitórias:0"
+                FontSize="20"
+                HorizontalOptions="Center"
+                />
+
+            <Label
+                x:Name="Streak"
+                Text="Sequência de Acertos: 0"
+                FontSize="20"
+                HorizontalOptions="Center"
+                />
+
+            <Label
+                x:Name="Soma"
+                Text="Soma do total com os lados opostos"
+                FontSize="20"
+                HorizontalOptions="Center"
+                />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
